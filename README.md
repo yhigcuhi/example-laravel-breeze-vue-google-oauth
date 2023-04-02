@@ -14,14 +14,16 @@ Laravel Breeze + vue SPA + Google OAuth
 $ composer create-project laravel/laravel .
 $ composer require laravel/breeze --dev
 $ composer install
-$ php artisan breeze:install vue
+$ php artisan breeze:install vue --typescript
+$ curl https://www.toptal.com/developers/gitignore/api/vim,vue,node,linux,macos,laravel,windows,composer,intellij,sublimetext,visualstudio,visualstudiocode >> .gitignore
 ```
+※　php artisan breeze:install vue --typescript の typscript 指定忘れずに!  
+
 ## 環境構築: vue on Laravel + Inertia
 ```bash
 $ npm install && npm run dev
-$ npm install -D typescript @types/node
+$ npm install -D typescript @types/node bootstrap lodash @types/lodash @types/ziggy-js
 ```
-TODO:bootstrapとlodash, @types/lodashは実行してみてから
 
 ## 資材管理
 - バックエンド: laravel
