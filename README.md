@@ -22,7 +22,7 @@ $ curl https://www.toptal.com/developers/gitignore/api/vim,vue,node,linux,macos,
 ## 環境構築: vue on Laravel + Inertia
 ```bash
 $ npm install && npm run dev
-$ npm install -D typescript @types/node bootstrap lodash @types/lodash @types/ziggy-js
+$ npm install -D bootstrap lodash @types/lodash
 ```
 
 ## 資材管理
