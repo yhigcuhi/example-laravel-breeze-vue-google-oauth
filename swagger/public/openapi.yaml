@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sample API T
+  description: >-
+    A sample API that uses a sample-site as an example to demonstrate features
+    in the OpenAPI 3.0 specification
+servers:
+  - url: http://localhost:8003
+paths:
+  /users:
+    get:
+      description: |
+        Returns all users
+      operationId: findUser
+      parameters:
+        - name: tags
+          in: query
+          description: tags to filter by
+          required: false
+          style: form
+          schema:
+            type: array
+            items:
+              type: string
+        - name: limit
+          in: query
+          description: maximum number of results to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: user response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /comments:
+    post:
+      description: |
+        登録サンプル
+      requestBody:
+        description: Resource to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Resource'
+      responses:
+        '201':
+          description: Resource created successfully
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 100
+        name:
+          type: string
+          example: Taro
+        status:
+          type: string
+          description: user status
+          enum:
+            - pending
+            - active
+            - inactive
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+    Resource:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
