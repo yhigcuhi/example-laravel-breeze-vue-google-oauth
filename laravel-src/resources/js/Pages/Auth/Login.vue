@@ -72,6 +72,11 @@ const submit = () => {
                 </label>
             </div>
 
+            <div class="flex items-center justify-end">
+                <!-- Breeze(Inertia)のLinkにすると CORSエラーっと言われるので aタグ -->
+                <a href="/auth/redirect" >Google auth</a>
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <Link
                     v-if="canResetPassword"
