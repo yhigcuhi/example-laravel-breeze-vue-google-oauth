@@ -1,6 +1,9 @@
 # example-laravel-breeze-vue-google-oauth
 Laravel Breeze + vue SPA + Google OAuth
 
+## 実験結果
+結論 ... Laravel Breezeはなくて良さそう、Inertiaの画面ルーティング(Ziggy)とかは使えるが サンプルファイル邪魔かと思う  
+2023.04.02 次試すとして ... Laravel Breeze なしの Google OAuthとの 比較で 全然いけそうなら Breezeなくす = プロジェクト 変える 方で向
 ## 環境
 |項目|バージョン|
 |:---|:---:|
@@ -24,6 +27,17 @@ $ curl https://www.toptal.com/developers/gitignore/api/vim,vue,node,linux,macos,
 $ npm install && npm run dev
 $ npm install -D bootstrap lodash @types/lodash
 ```
+
+## 環境構築: Google OAuth
+[laravel/socialite Google OAuth 参考](https://zenn.dev/naoki_oshiumi/articles/80ab178d958447)
+[laravel/socialite + breeze Laravel 10のカスタマイズ 参考](https://reffect.co.jp/laravel/socialiote)
+
+- socialiteインストール 
+```bash
+$ composer require laravel/socialite --dev
+```
+
+service.phpとenvの内容に Google OAuthの設定を記載
 
 ## 資材管理
 - バックエンド: laravel
